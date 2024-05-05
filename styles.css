@@ -1,0 +1,86 @@
+:root {
+    --background-color: #001f3f;
+    --explainer-bg: #3D9970;
+    --button-bg: #85144b;
+    --black-text: #111111;
+    --white-text: #FFFFFF;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--background-color);
+    font-family: "Reddit Sans", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main-center {
+    max-width: 450px;
+}
+
+h1, #p-explain {
+    color: var(--white-text);
+}
+
+h1 {
+    text-align: center;
+    font-size: 44px;
+    font-weight: 900;
+}
+
+#palindrome-box, #explain-box {
+    padding: 1rem 3rem;
+    border-radius: 15px;
+}
+
+#palindrome-box {
+    background-color: var(--white-text);
+    color: var(--black-text);
+}
+
+label {
+    display: block;
+    font-size: 18px;
+    text-align: center;
+}
+
+#palindrome-flex {
+    display: flex;
+    margin: 1rem auto;
+    gap: 10px;
+    text-align: center;
+}
+
+#text-input {
+    all: unset;
+    flex-grow: 1;
+    padding: .25em;
+    border-bottom: 2px solid var(--button-bg);
+}
+
+#text-input:focus {
+    border-radius: 5px;
+    outline: 2px solid var(--black-text);
+}
+
+#check-btn {
+    all: unset;
+    font-size: 14px;
+    color: var(--white-text);
+    background-color: var(--button-bg);
+    padding: .5rem 1.5rem;
+    border-radius: 10px;
+}
+
+#check-btn:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
