@@ -1,6 +1,6 @@
 :root {
     --background-color: #001f3f;
-    --explainer-bg: #3D9970;
+    --explainer-bg: #023020;
     --button-bg: #85144b;
     --black-text: #111111;
     --white-text: #FFFFFF;
@@ -26,7 +26,7 @@ body {
     max-width: 450px;
 }
 
-h1, #p-explain {
+h1, #explain-box, #palindrome-box {
     color: var(--white-text);
 }
 
@@ -37,11 +37,11 @@ h1 {
 }
 
 #palindrome-box, #explain-box {
-    padding: 1rem 3rem;
-    border-radius: 15px;
+    border-radius: 20px;
 }
 
 #palindrome-box {
+    padding: 1rem 3rem;
     background-color: var(--white-text);
     color: var(--black-text);
 }
@@ -77,10 +77,25 @@ label {
     color: var(--white-text);
     background-color: var(--button-bg);
     padding: .5rem 1.5rem;
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
 #check-btn:hover {
     opacity: 0.9;
     cursor: pointer;
 }
+
+#explain-box {
+    padding: 1rem;
+    margin-top: 2rem;
+    background-color: var(--explainer-bg);
+    display: flex;
+    gap: 5px;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+#explain-box p {
+    margin: 0;
+}
+
