@@ -3,19 +3,35 @@ const checkButton = document.getElementById('check-btn');
 const result = document.getElementById('result');
 let alphaNumeric = /[a-z0-9]/i;
 
+const printResults = (textValue, bool) => {
+    console.log(`${textValue} ${bool ? 'is': 'is not'} a palindrome!`)
+    result.innerHTML = `<span>${textValue}</span> ${bool ? 'is': 'is not'} a palindrome!`
+}
 
-const checkPalindrome = () => {
-    let textValue = textInput.value;
-    if(!textValue) {
-        alert("Please input a value");
-        return
+const checkPalindrome = (textValue, valueArray) => {
+    let value = valueArray.join("");
+    let reversedValue = valueArray.reverse().join("");
+    if (value===reversedValue) {
+        printResults(textValue, true);
     }
     else {
-        let valueArray = textValue.split("").filter(value => alphaNumeric.test(value)).map(value => value.toLowerCase());
-        let value = valueArray.join("");
-        let reversedValue = valueArray.reverse().join("");
-        alert(reversedValue);
+        printResults(textValue, false);
     }
 }
 
-checkButton.addEventListener('click', checkPalindrome)
+const checkEmpty = () => {
+    let textValue = textInput.value;
+    let valueArray = textValue.split("").filter(value => alphaNumeric.test(value)).map(value => value.toLowerCase());
+    
+    result.innerHTML = '';
+    textInput.value = '';
+    if(valueArray.length<1) {
+        alert("Please input a value");
+        return;
+    }
+    else {
+        checkPalindrome(textValue, valueArray)
+    }
+}
+
+checkButton.addEventListener('click', checkEmpty)
