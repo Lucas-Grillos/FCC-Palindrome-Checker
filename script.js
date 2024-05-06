@@ -1,10 +1,10 @@
 const textInput = document.getElementById('text-input');
 const checkButton = document.getElementById('check-btn');
 const result = document.getElementById('result');
+let textFocus = false;
 let alphaNumeric = /[a-z0-9]/i;
 
 const printResults = (textValue, bool) => {
-    console.log(`${textValue} ${bool ? 'is': 'is not'} a palindrome!`)
     result.innerHTML = `<span>${textValue}</span> ${bool ? 'is': 'is not'} a palindrome!`
 }
 
@@ -34,4 +34,16 @@ const checkEmpty = () => {
     }
 }
 
+const checkKeyPress = (event) => {
+    if(event.keyCode === 13 && textFocus) {
+        textInput.blur();
+        checkEmpty()
+    }
+}
+
+
+
 checkButton.addEventListener('click', checkEmpty)
+document.addEventListener('keydown', checkKeyPress)
+textInput.addEventListener('focus', () => {textFocus = true});
+textInput.addEventListener('focusout', () => {textFocus = false});
