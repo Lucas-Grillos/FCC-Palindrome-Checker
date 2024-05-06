@@ -4,6 +4,7 @@
     --button-bg: #85144b;
     --black-text: #111111;
     --white-text: #FFFFFF;
+    --box-shadow-bg: #0074D9;
 }
 
 * {
@@ -44,19 +45,19 @@ h1 {
     padding: 1rem 3rem;
     background-color: var(--white-text);
     color: var(--black-text);
+    box-shadow: 0px 3px 8px var(--box-shadow-bg);
+    text-align: center;
 }
 
 label {
     display: block;
     font-size: 18px;
-    text-align: center;
 }
 
 #palindrome-flex {
     display: flex;
     margin: 1rem auto;
     gap: 10px;
-    text-align: center;
 }
 
 #text-input {
@@ -83,6 +84,14 @@ label {
 #check-btn:hover {
     opacity: 0.9;
     cursor: pointer;
+}
+
+#result {
+    font-size: 24px;
+}
+
+#result > span {
+    font-weight: bolder;
 }
 
 #explain-box {
